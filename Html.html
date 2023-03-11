@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Video Streaming Website</title>
+	<link rel="stylesheet" href="Css.css">
+</head>
+<body>
+	<header>
+		<h1>Video Streaming Website</h1>
+	</header>
+	<main>
+		<ul class="videos-list">
+			<li>
+				<a href="video1.php">
+					<img src="video1-thumbnail.jpg" alt="Video 1">
+					<h2>Video 1</h2>
+				</a>
+			</li>
+			<li>
+				<a href="video2.php">
+					<img src="video2-thumbnail.jpg" alt="Video 2">
+					<h2>Video 2</h2>
+				</a>
+			</li>
+			<li>
+				<a href="video3.php">
+					<img src="video3-thumbnail.jpg" alt="Video 3">
+					<h2>Video 3</h2>
+				</a>
+			</li>
+		</ul>
+
+		<header>
+			<h1>Video 1</h1>
+		</header>
+		<main>
+			<video id="video-player" controls>
+				<source src="video1.mp4" type="video/mp4">
+				<source src="video1.webm" type="video/webm">
+				<p>Your browser does not support the video tag.</p>
+			</video>
+			<div class="video-details">
+				<div class="likes">
+					<button onclick="likeVideo()">Like</button>
+					<span id="likes-count">0</span> likes
+				</div>
+				<div class="views">
+					<span id="views-count">0</span> views
+				</div>
+				<div class="share">
+					<button onclick="shareVideo()">Share</button>
+				</div>
+			</div>
+			<div class="comments">
+				<h2>Comments</h2>
+				<ul id="comments-list">
+					<li>
+						<div class="comment">
+							<p>Comment 1</p>
+							<button onclick="replyToComment(this)">Reply</button>
+						</div>
+						<ul class="replies">
+							<li>
+								<div class="comment">
+									<p>Reply 1 to Comment 1</p>
+									<button onclick="replyToComment(this)">Reply</button>
+								</div>
+							</li>
+							<li>
+								<div class="comment">
+									<p>Reply 2 to Comment 1</p>
+									<button onclick="replyToComment(this)">Reply</button>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="comment">
+							<p>Comment 2</p>
+							<button onclick="replyToComment(this)">Reply</button>
+						</div>
+					</li>
+					<li>
+						<div class="comment">
+							<p>Comment 3</p>
+							<button onclick="replyToComment(this)">Reply</button>
+						</div>
+					</li>
+				</ul>
+				<form id="comment-form">
+					<textarea name="comment" placeholder="Add a comment"></textarea>
+					<button type="submit">Comment</button>
+				</form>
+			</div>
+		</main>
+
+		<script src="script.js"></script>
+
+</body>
+</html>
